@@ -94,9 +94,25 @@ function App() {
 
       {/* show a no movies found when a user tries to search for a movie that does not exist */}
       {myMovies.length === 0 ? (
-        <div className="text-center border-6 bg-blue-800 py-24 text-3xl">
-          Searched movies did not return any result
-          <p > Consider Adding the movie using the Create To Add Movie Button at the top right corner</p>
+       <div className="text-center py-24 text-3xl">
+          <p>
+            {" "}
+            This movie is not available.
+            <br />{" "}
+          </p>
+          <p>
+            {" "}
+            {/* I wrapped the modal to add a new movie here when the search did not return any movie so they can add the movie */}
+            <button>
+              {" "}
+              <CreateNewMovie
+                memorizedMovies={memorizedMovies}
+                setMyMovies={setMyMovies}
+                setUpdateMemorizedMovies={setUpdateMemorizedMovies}
+              />
+            </button>{" "}
+            <br />{" "}
+          </p>
         </div>
       ) : (
         // else show the movies if a movie was found
