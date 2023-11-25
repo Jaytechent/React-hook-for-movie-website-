@@ -94,8 +94,9 @@ function App() {
 
       {/* show a no movies found when a user tries to search for a movie that does not exist */}
       {myMovies.length === 0 ? (
-        <div className="text-center py-24 text-3xl">
+        <div className="text-center bg-blue-800 py-24 text-3xl">
           Searched movies did not return any result
+          <p > Consider Adding the movie using the Create New Video Button at the top right corner</p>
         </div>
       ) : (
         // else show the movies if a movie was found
